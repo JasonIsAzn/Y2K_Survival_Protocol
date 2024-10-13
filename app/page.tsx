@@ -1,6 +1,6 @@
 "use client"
 import { Press_Start_2P } from 'next/font/google';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const pressStart2P = Press_Start_2P({ weight: '400', subsets: ['latin'] });
 
@@ -68,7 +68,7 @@ const decisionTree = [
     id: 14,
     prompt: "The elderly man did not notice you and you were able to successfully take the necessary resources. You are well supplied for the impending doom that awaits you.",
     choices: [
-      { label: "Continue", nextNode: 33, timeCost: 0 }
+      { label: "Continue", nextNode: 33, timeCost: 3 }
     ],
     points: 10
   },
@@ -76,7 +76,7 @@ const decisionTree = [
     id: 15,
     prompt: "You enter the store when it looks empty and start to fill your bags with food. You hear a voice behind you say: 'HEY! You didn't pay for that'. The next moment you find yourself outside the store with a bad headache.",
     choices: [
-      { label: "Continue", nextNode: 34, timeCost: 0 }
+      { label: "Continue", nextNode: 34, timeCost: 2 }
     ],
     points: 5
   },
@@ -93,7 +93,7 @@ const decisionTree = [
     id: 16,
     prompt: "You enter the building and fortunately there is no one else around. You locate the necessary resources for survival and you're prepared to face the horror that awaits you.",
     choices: [
-      { label: "Continue", nextNode: 33, timeCost: 0 }
+      { label: "Continue", nextNode: 33, timeCost: 3 }
     ],
     points: 10
   },
@@ -101,7 +101,7 @@ const decisionTree = [
     id: 17,
     prompt: "You find the door but you hear quick scattering once you step in. You feel uneasy but continue to look for the needed resources. As you leave with your pockets full, two strange figures run towards you from the exit. As you fall to the ground, you feel yourself get lighter, your resources have been stolen.",
     choices: [
-      { label: "Continue", nextNode: 34, timeCost: 0 }
+      { label: "Continue", nextNode: 34, timeCost: 2 }
     ],
     points: 0
   },
@@ -118,7 +118,7 @@ const decisionTree = [
     id: 18,
     prompt: "You take what you have and put on your best charm face. Fortunately everyone falls for your charm and you're able to walk away with many more resources than you started with.",
     choices: [
-      { label: "Continue", nextNode: 33, timeCost: 0 }
+      { label: "Continue", nextNode: 33, timeCost: 3 }
     ],
     points: 10
   },
@@ -126,7 +126,7 @@ const decisionTree = [
     id: 19,
     prompt: "You take what you have and do your best to charm them. Unfortunately they see through your act and refuse to trade with you. You walk away with somehow less than you started with",
     choices: [
-      { label: "Continue", nextNode: 34, timeCost: 0 }
+      { label: "Continue", nextNode: 34, timeCost: 2 }
     ],
     points: 0
   },
@@ -153,7 +153,7 @@ const decisionTree = [
     id: 20,
     prompt: "You make it to the basement safely and locate the breaker box. You thinker around with it and you're able to repair and sustain the power. ",
     choices: [
-      { label: "Continue", nextNode: 33, timeCost: 0 }
+      { label: "Continue", nextNode: 33, timeCost: 3 }
     ],
     points: 10
   },
@@ -161,7 +161,7 @@ const decisionTree = [
     id: 21,
     prompt: "You try to make it down the basement but take a misstep on the stairs and tumble down. You head right into the breaker box, destroying it beyond repair, and getting up with a sore bum. ",
     choices: [
-      { label: "Continue", nextNode: 34, timeCost: 0 }
+      { label: "Continue", nextNode: 34, timeCost: 2 }
     ],
     points: 0
   },
@@ -178,7 +178,7 @@ const decisionTree = [
     id: 22,
     prompt: "You are able to successfully locate the needed batteries and get a radio working. You change through the stations and find a news outlet that gives you important updates.",
     choices: [
-      { label: "Continue", nextNode: 33, timeCost: 0 }
+      { label: "Continue", nextNode: 33, timeCost: 3 }
     ],
     points: 10
   },
@@ -186,7 +186,7 @@ const decisionTree = [
     id: 23,
     prompt: "You are able to find batteries but they don't seem to fit the radio. You are anxious to know what is going on in the world and shove the batteries in the radio. As you try to turn it on, the radio sparks and is no longer functional.",
     choices: [
-      { label: "Continue", nextNode: 34, timeCost: 0 }
+      { label: "Continue", nextNode: 34, timeCost: 2 }
     ],
     points: 0
   },
@@ -203,7 +203,7 @@ const decisionTree = [
     id: 24,
     prompt: "After a few simple adjustments the truck is able to start successfully. You notice all it needs is a bit of gas for the future. You load up the truck and make you way to look for survivors and better location.",
     choices: [
-      { label: "Continue", nextNode: 33, timeCost: 0 }
+      { label: "Continue", nextNode: 33, timeCost: 3 }
     ],
     points: 10
   },
@@ -211,7 +211,7 @@ const decisionTree = [
     id: 25,
     prompt: "You complete a few adjustments and try to turn on the truck. As you start the truck, you hear a loud rattle coming from the engine. You forgot to tighten a screw after adjusting the engine. The truck fails to start and you are left walking back to your apartment thinking of a new plan.",
     choices: [
-      { label: "Continue", nextNode: 34, timeCost: 0 }
+      { label: "Continue", nextNode: 34, timeCost: 2 }
     ],
     points: 0
   },
@@ -237,7 +237,7 @@ const decisionTree = [
     id: 26,
     prompt: "You ignite the match and smoke begins to fill the air. A truck approaches you and you explain to them your idea of working together for the best chances of survival. They agree and let you onboard. You feel safe and more confident of surviving this disaster.",
     choices: [
-      { label: "Continue", nextNode: 33, timeCost: 0 }
+      { label: "Continue", nextNode: 33, timeCost: 3 }
     ],
     points: 10
   },
@@ -245,7 +245,7 @@ const decisionTree = [
     id: 27,
     prompt: "You light the match and the smoke starts to rise. Before the smoke disappears, a group of people approach you and offer you a choice: give them the remaining of your supplies, or let today be your last day. Without another choice, you give them the rest of your supplies and they leave you alone.",
     choices: [
-      { label: "Continue", nextNode: 34, timeCost: 0 }
+      { label: "Continue", nextNode: 34, timeCost: 2 }
     ],
     points: 0
   },
@@ -262,7 +262,7 @@ const decisionTree = [
     id: 28,
     prompt: "You knock on the door three times and wait for a response. There is a couple at the door and bring you in quickly to help being packing supplies into their car outside. After helping them, they are willing to help you out throughout this panic.",
     choices: [
-      { label: "Continue", nextNode: 33, timeCost: 0 }
+      { label: "Continue", nextNode: 33, timeCost: 3 }
     ],
     points: 10
   },
@@ -270,7 +270,7 @@ const decisionTree = [
     id: 29,
     prompt: "You knock once on the door and it creaks open slowly. There is no sound so you take a step in, quickly regretting it once you trip over someone's leg sticking out. As you get up, they hustle you into giving up all the supplies you were carrying.",
     choices: [
-      { label: "Continue", nextNode: 34, timeCost: 0 }
+      { label: "Continue", nextNode: 34, timeCost: 2 }
     ],
     points: 0
   },
@@ -284,7 +284,7 @@ export default function Home() {
   const [timer, setTimer] = useState<number>(24);
   const [currentNode, setCurrentNode] = useState(decisionTree[0]);
   const [points, setPoints] = useState(0);
-  const [decisionHistory, setDecisionHistory] = useState<any[]>([]);
+  const [decisionHistory, setDecisionHistory] = useState<Decision[]>([]);
   const [gameResult, setGameResult] = useState<string>("");
 
   const handleChoice = (choice: { nextNode?: number; randomNodes?: number[]; timeCost: number; label: string }) => {
@@ -347,10 +347,12 @@ export default function Home() {
   const checkWinLose = (updatedPoints: number) => {
     if (updatedPoints >= 20) {
       setGameResult('win');
-      setGameOver(true);
-    } else if (timer === 0 && updatedPoints < 20) {
+    } else if (updatedPoints < 20) {
       setGameResult('lose');
-      setGameOver(true);
+    }
+
+    if (timer === 0) {
+      setGameOver(true)
     }
   };
 
@@ -483,4 +485,25 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+interface Decision {
+  nodeId: number;
+  prompt: string;
+  choiceLabel: string;
+  timeRemaining: number;
+}
+
+interface Choice {
+  label: string;
+  nextNode?: number;
+  randomNodes?: number[];
+  timeCost: number;
+}
+
+interface Node {
+  id: number;
+  prompt: string;
+  choices: Choice[];
+  points: number;
 }
