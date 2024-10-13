@@ -488,10 +488,3 @@ interface Decision {
   choiceLabel: string;
   timeRemaining: number;
 }
-
-interface Choice {
-  label: string;
-  nextNode?: number;
-  randomNodes?: number[];
-  timeCost: number;
-}
