@@ -285,7 +285,7 @@ export default function Home() {
   const [currentNode, setCurrentNode] = useState(decisionTree[0]);
   const [points, setPoints] = useState(0);
   const [decisionHistory, setDecisionHistory] = useState<any[]>([]);
-  const [isPromptComplete, setIsPromptComplete] = useState<boolean>(false);
+  const [gameResult, setGameResult] = useState<string>("");
 
   const handleChoice = (choice: { nextNode?: number; randomNodes?: number[]; timeCost: number; label: string }) => {
     let nextNodeId: number | undefined;
@@ -304,7 +304,8 @@ export default function Home() {
         setPoints(points + nextNode.points);
         removeTime(choice.timeCost);
         logDecision(currentNode.id, currentNode.prompt, choice.label);
-        setIsPromptComplete(false);
+
+        checkWinLose(points + nextNode.points);
       }
     }
   };
@@ -313,7 +314,7 @@ export default function Home() {
     setTimer((prevTimer) => {
       const newTime = Math.max(prevTimer - time, 0);
       if (newTime === 0) {
-        setGameOver(true);
+        checkWinLose(points);
       }
       return newTime;
     });
@@ -336,25 +337,24 @@ export default function Home() {
       nextNodeId !== 2 &&
       nextNodeId !== 3 &&
       nextNodeId !== 4 &&
-      nextNodeId !== 14 &&
-      nextNodeId !== 15 &&
-      nextNodeId !== 16 &&
-      nextNodeId !== 17 &&
-      nextNodeId !== 18 &&
-      nextNodeId !== 19 &&
-      nextNodeId !== 20 &&
-      nextNodeId !== 21 &&
-      nextNodeId !== 22 &&
-      nextNodeId !== 23 &&
-      nextNodeId !== 24 &&
-      nextNodeId !== 26 &&
-      nextNodeId !== 27 &&
-      nextNodeId !== 28 &&
-      nextNodeId !== 29 &&
       nextNodeId !== 32 &&
+      nextNodeId !== 33 &&
+      nextNodeId !== 34 &&
       decisionHistory.some((decision) => decision.nodeId === nextNodeId)
     );
   };
+
+  const checkWinLose = (updatedPoints: number) => {
+    if (updatedPoints >= 20) {
+      setGameResult('win');
+      setGameOver(true);
+    } else if (timer === 0 && updatedPoints < 20) {
+      setGameResult('lose');
+      setGameOver(true);
+    }
+  };
+
+  console.log(gameResult)
 
   return (
     <div className={`${pressStart2P.className} h-screen w-screen flex overflow-hidden`}>
@@ -440,8 +440,9 @@ export default function Home() {
           {/* Game End Screen */}
           {gameOver && (
             <div className="flex flex-col items-center justify-center h-full">
-              <div className="text-4xl text-center text-red-600">Game Over</div>
-              <div className="text-2xl text-center text-black mt-4">You ran out of time!</div>
+              <div className={`text-4xl text-center ${gameResult === 'win' ? "text-green-600" : "text-red-600"}`}>
+                {gameResult === 'win' ? 'You Win!' : 'you lose'}
+              </div>
 
               {/* Show Results Button */}
               <div className="text-center mt-6">
