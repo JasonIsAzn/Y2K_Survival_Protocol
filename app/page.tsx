@@ -59,8 +59,8 @@ const decisionTree = [
     id: 5,
     prompt: "You realize there is a corner store near your apartment with an elderly clerk. You can maybe steal what you need when the store seems empty, or you can walk away. ",
     choices: [
-      { label: "Yes, I try to enter when the store looks empty.", randomNodes: [14, 15], timeCost: 2 },
-      { label: "No, I rather not rob him.", nextNode: 32, timeCost: 1 }
+      { label: "Yes, I try to enter when the store looks empty.", randomNodes: [14, 15], timeCost: 3 },
+      { label: "No, I rather not rob him.", nextNode: 32, timeCost: 2 }
     ],
     points: 0
   },
@@ -84,8 +84,8 @@ const decisionTree = [
     id: 6,
     prompt: "You know there are multiple abandoned buildings near your apartment that may have important resources. You wish to scavenge, but you can't tell if anyone else had the same idea. Do you try to enter and scavage the abandoned buildings?",
     choices: [
-      { label: "Yes, I look for a door to enter the building.", randomNodes: [16, 17], timeCost: 2 },
-      { label: "No, I rather not risk entering a building that contains secrets.", nextNode: 32, timeCost: 1 }
+      { label: "Yes, I look for a door to enter the building.", randomNodes: [16, 17], timeCost: 3 },
+      { label: "No, I rather not risk entering a building that contains secrets.", nextNode: 32, timeCost: 2 }
     ],
     points: 0
   },
@@ -109,8 +109,8 @@ const decisionTree = [
     id: 7,
     prompt: "You realize a group of people are gathering together at the neighborhood park. They seem friendly with lots of needed resources. You take what little you have and consider bartering. Do you try to barter with them?",
     choices: [
-      { label: "Yes, I take what I have and try to barter for the most amount of resources I can carry.", randomNodes: [18, 19], timeCost: 2 },
-      { label: "No, I think I will make due with what I have in my apartment.", nextNode: 32, timeCost: 1 }
+      { label: "Yes, I take what I have and try to barter for the most amount of resources I can carry.", randomNodes: [18, 19], timeCost: 3 },
+      { label: "No, I think I will make due with what I have in my apartment.", nextNode: 32, timeCost: 2 }
     ],
     points: 0
   },
@@ -144,8 +144,8 @@ const decisionTree = [
     id: 8,
     prompt: "You know there is a main breaker box deep in the basement of your apartment complex. If you can get down there, you try to repair it and keep it safe. Do you attempt to go down the basement and protect your only chance of power after the clock strikes 12:00 AM?",
     choices: [
-      { label: "Yes, I realize this is the only shot I will have to have stable power and make my way down the basement.", randomNodes: [20, 21], timeCost: 2 },
-      { label: "No, I don't think I can make it down there safely and repair something that may hurt me.", nextNode: 32, timeCost: 1 }
+      { label: "Yes, I realize this is the only shot I will have to have stable power and make my way down the basement.", randomNodes: [20, 21], timeCost: 3 },
+      { label: "No, I don't think I can make it down there safely and repair something that may hurt me.", nextNode: 32, timeCost: 2 }
     ],
     points: 0
   },
@@ -169,8 +169,8 @@ const decisionTree = [
     id: 9,
     prompt: "You understand that communication in these times is key and will increase survivability. There are a few radios located near your apartment in the local tech store. As you make it to the store, you realize each radio needs special batteries. Do you attempt to locate the batteries and get a radio working?",
     choices: [
-      { label: "Yes, communication is really important and I must find a way to be connected to the world.", randomNodes: [22, 23], timeCost: 2 },
-      { label: "No, I know that communication is important but there has to be a better way to communicate with the world.", nextNode: 32, timeCost: 1 }
+      { label: "Yes, communication is really important and I must find a way to be connected to the world.", randomNodes: [22, 23], timeCost: 3 },
+      { label: "No, I know that communication is important but there has to be a better way to communicate with the world.", nextNode: 32, timeCost: 2 }
     ],
     points: 0
   },
@@ -194,8 +194,8 @@ const decisionTree = [
     id: 10,
     prompt: "Moving from point A to point B will be the most important key to this. The local car repair shop has some busted cars and maybe you can try to repair one with the tools there. Do you attempt to repair the truck you see in the shop?",
     choices: [
-      { label: "Yes, this valuable repair may be the only vehicle left after midnight.", randomNodes: [24, 25], timeCost: 2 },
-      { label: "No, I don't think this repair may be worth it.", nextNode: 32, timeCost: 1 }
+      { label: "Yes, this valuable repair may be the only vehicle left after midnight.", randomNodes: [24, 25], timeCost: 3 },
+      { label: "No, I don't think this repair may be worth it.", nextNode: 32, timeCost: 2 }
     ],
     points: 0
   },
@@ -228,8 +228,8 @@ const decisionTree = [
     id: 11,
     prompt: "You decide to create a smoke signal so that others can find you and perhaps will be willing to join you. Before you light the match, you realize that you will not only be attracting potential teammates, but other who may not be so friendly. Do you ignite the match?",
     choices: [
-      { label: "Yes, I light the match, the risk is worth the reward.", randomNodes: [26, 27], timeCost: 2 },
-      { label: "No, this decision will leave a target behind my back. I rather be safe.", nextNode: 32, timeCost: 1 }
+      { label: "Yes, I light the match, the risk is worth the reward.", randomNodes: [26, 27], timeCost: 3 },
+      { label: "No, this decision will leave a target behind my back. I rather be safe.", nextNode: 32, timeCost: 2 }
     ],
     points: 0
   },
@@ -253,8 +253,8 @@ const decisionTree = [
     id: 12,
     prompt: "You make your way to the near by apartment complexes in hopes that there is anybody left to team with. You enter the apartment complex and hear noises upstairs; there are still people here. As you are about to knock on their door, you consider who is really behind the close door. Do you decide to knock?",
     choices: [
-      { label: "Yes, teamwork is key and the chances of my survivability rises once I knock on the door.", randomNodes: [28, 29], timeCost: 2 },
-      { label: "No, I decide it's not worth the risk of making a possible enemy.", nextNode: 32, timeCost: 1 }
+      { label: "Yes, teamwork is key and the chances of my survivability rises once I knock on the door.", randomNodes: [28, 29], timeCost: 3 },
+      { label: "No, I decide it's not worth the risk of making a possible enemy.", nextNode: 32, timeCost: 2 }
     ],
     points: 0
   },
