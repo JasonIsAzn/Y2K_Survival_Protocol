@@ -57,7 +57,6 @@ const decisionTree = [
 export default function Home() {
   const [gameStart, setGameStart] = useState<boolean>(false)
   const [timer, setTimer] = useState<number>(24)
-  const [prompt, setPrompt] = useState<string>("")
   const [currentNode, setCurrentNode] = useState(decisionTree[0]);
   const [points, setPoints] = useState(0);
 
