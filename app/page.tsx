@@ -495,10 +495,3 @@ interface Choice {
   randomNodes?: number[];
   timeCost: number;
 }
-
-interface Node {
-  id: number;
-  prompt: string;
-  choices: Choice[];
-  points: number;
-}
