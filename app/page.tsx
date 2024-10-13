@@ -304,8 +304,6 @@ export default function Home() {
         setPoints(points + nextNode.points);
         removeTime(choice.timeCost);
         logDecision(currentNode.id, currentNode.prompt, choice.label);
-
-        checkWinLose(points + nextNode.points);
       }
     }
   };
@@ -315,6 +313,7 @@ export default function Home() {
       const newTime = Math.max(prevTimer - time, 0);
       if (newTime === 0) {
         checkWinLose(points);
+        setGameOver(true)
       }
       return newTime;
     });
@@ -349,10 +348,6 @@ export default function Home() {
       setGameResult('win');
     } else if (updatedPoints < 20) {
       setGameResult('lose');
-    }
-
-    if (timer === 0) {
-      setGameOver(true)
     }
   };
 
