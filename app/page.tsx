@@ -78,7 +78,7 @@ const decisionTree = [
     choices: [
       { label: "Continue", nextNode: 34, timeCost: 2 }
     ],
-    points: 5
+    points: 0
   },
   {
     id: 6,
